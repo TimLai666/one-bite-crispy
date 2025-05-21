@@ -2,6 +2,7 @@ package main
 
 import (
 	"bot/config"
+	"bot/service"
 	"fmt"
 	"log"
 	"net/http"
@@ -34,8 +35,13 @@ func main() {
 		for _, event := range cb.Events {
 			switch e := event.(type) {
 			case webhook.MessageEvent:
-				// Do Something...
-				replyMessage := "收到訊息: " + e.Message.(webhook.TextMessageContent).Text
+				replyMessage, err := service.AskInfo(e.Message.(webhook.TextMessageContent).Text)
+				if err != nil {
+					log.Printf("LLM 請求失敗: %v", err)
+					http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+					return
+				}
+
 				bot.ReplyMessage(&messaging_api.ReplyMessageRequest{
 					ReplyToken: e.ReplyToken,
 					Messages: []messaging_api.MessageInterface{
