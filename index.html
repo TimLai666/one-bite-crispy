@@ -47,12 +47,15 @@
             transform-origin: left center;
         }
 
-        .book-flip .book-content:hover .book-front {
+        /* 滑鼠懸停效果 */
+        .book-flip .book-content:hover .book-front,
+        .book-flip .book-content.active .book-front {
             transform: rotateY(-180deg);
             box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .book-flip .book-content:hover .book-back {
+        .book-flip .book-content:hover .book-back,
+        .book-flip .book-content.active .book-back {
             z-index: 2;
             transform: rotateY(0deg);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
@@ -73,8 +76,18 @@
             transition: opacity 0.8s ease;
         }
 
-        .book-flip .book-content:hover::before {
+        .book-flip .book-content:hover::before,
+        .book-flip .book-content.active::before {
             opacity: 1;
+        }
+
+        /* 一口酥製作過程點擊效果 */
+        .max-w-5xl .grid>div.active .absolute.bottom-0>div {
+            transform: translateY(0) !important;
+        }
+
+        .max-w-5xl .grid>div.active p {
+            opacity: 1 !important;
         }
 
         /* 添加新的視覺效果樣式 */
@@ -1227,9 +1240,7 @@
             e.preventDefault();
             alert('感謝您的留言！我們將盡快回覆您的訊息。');
             this.reset();
-        });
-
-        // 平滑滾動
+        });        // 平滑滾動
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1250,6 +1261,35 @@
                         mobileMenu.classList.add('hidden');
                     }
                 }
+            });
+        });        // 電子書點擊翻轉效果
+        document.querySelectorAll('.book-content').forEach(book => {
+            book.addEventListener('click', function () {
+                // 添加或移除active類以控制翻轉
+                this.classList.toggle('active');
+
+                // 如果沒有hover效果，則手動控制翻轉
+                const front = this.querySelector('.book-front');
+                const back = this.querySelector('.book-back');
+
+                if (this.classList.contains('active')) {
+                    front.style.transform = 'rotateY(-180deg)';
+                    back.style.transform = 'rotateY(0deg)';
+                    back.style.zIndex = '2';
+                } else {
+                    front.style.transform = 'rotateY(0deg)';
+                    back.style.transform = 'rotateY(180deg)';
+                    setTimeout(() => {
+                        back.style.zIndex = '1';
+                    }, 500); // 半秒延遲，讓翻轉動畫完成
+                }
+            });
+        });
+        // 一口酥製作過程照片點擊效果
+        document.querySelectorAll('.max-w-5xl .grid > div').forEach(item => {
+            item.addEventListener('click', function () {
+                // 點擊時切換active類
+                this.classList.toggle('active');
             });
         });
     </script>
