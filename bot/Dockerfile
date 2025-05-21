@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine as builder
+FROM golang:1.24-alpine AS builder
 
 WORKDIR /app
 
@@ -11,13 +11,11 @@ COPY . .
 # Build the Go app
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
-
 FROM alpine:latest
 WORKDIR /
 # Copy the Precompiled binary file from the previous stage
 COPY --from=builder /app/main .
 # Copy the config file
 COPY --from=builder /app/.env .env
-
 
 CMD [ "./main" ]

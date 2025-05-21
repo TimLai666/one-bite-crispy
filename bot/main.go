@@ -35,7 +35,7 @@ func main() {
 			switch e := event.(type) {
 			case webhook.MessageEvent:
 				// Do Something...
-				replyMessage := "收到訊息: " + e.Message.GetType()
+				replyMessage := "收到訊息: " + e.Message.(webhook.TextMessageContent).Text
 				bot.ReplyMessage(&messaging_api.ReplyMessageRequest{
 					ReplyToken: e.ReplyToken,
 					Messages: []messaging_api.MessageInterface{
