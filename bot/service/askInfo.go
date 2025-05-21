@@ -9,6 +9,7 @@ import (
 func AskInfo(msg string) (string, error) {
 	info := map[string]string{
 		"社區名稱": "新北市永和區民權社區",
+		"產品":   "一口酥",
 	}
 	prompt := "社區資訊：\n" + conv.ToString(info) + "\n民眾提出的問題：" + msg + `
 你是社區發展協會的專家，請根據以上社區資訊回答問題。遵守以下規則：
