@@ -4,3 +4,9 @@ services:
     ports:
       - "1644:8081"
     restart: always
+    networks:
+      - ollama-net
+
+networks:
+  ollama-net:
+    external: true
