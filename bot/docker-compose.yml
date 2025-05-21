@@ -1,0 +1,6 @@
+services:
+  app:
+    image: one-bite-crispy:latest
+    ports:
+      - "1644:80"
+    restart: always
