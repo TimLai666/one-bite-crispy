@@ -12,6 +12,12 @@ import (
 )
 
 func main() {
+	// res, _ := prompt.ReplyPrompt("hello")
+	// fmt.Println(res)
+	// res, err := service.AskInfo("將舉辦哪些活動")
+	// fmt.Println(res)
+	// fmt.Println(err)
+	// return
 	client := &http.Client{}
 	bot, err := messaging_api.NewMessagingApiAPI(
 		config.LINE_CHANNEL_TOKEN,
