@@ -23,5 +23,5 @@ func init() {
 
 func CallLLM(prompt string) (string, error) {
 	prompt = "使用繁體中文回答！\n禁止使用粗話或髒話！\n" + prompt
-	return llms.GenerateFromSinglePrompt(context.Background(), client, prompt, llms.WithTemperature(1.5))
+	return llms.GenerateFromSinglePrompt(context.Background(), client, prompt, llms.WithTemperature(1.2))
 }
