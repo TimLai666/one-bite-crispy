@@ -15,7 +15,7 @@ require (
 
 require (
 	github.com/HazelnutParadise/Go-Utils v0.8.1
-	github.com/TimLai666/zaipra v0.1.1
+	github.com/TimLai666/zaipra v0.1.2
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
