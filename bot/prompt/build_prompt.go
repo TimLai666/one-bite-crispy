@@ -22,7 +22,8 @@ func init() {
 
 func ReplySystemPrompt(msg string) (string, error) {
 	var tpl bytes.Buffer
-	now := time.Now()
+	loc := time.FixedZone("Asia/Taipei", 8*60*60)
+	now := time.Now().In(loc)
 	if err := tmpl.Execute(&tpl, struct {
 		CommunityBaseInfo string
 		Today             string
