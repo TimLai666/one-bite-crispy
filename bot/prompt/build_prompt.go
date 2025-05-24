@@ -22,7 +22,7 @@ func ReplyPrompt(msg string) (string, error) {
 	var tpl bytes.Buffer
 	now := time.Now()
 	if err := tmpl.Execute(&tpl, struct {
-		Info    map[string]string
+		Info    map[string]any
 		Msg     string
 		Today   string
 		NowTime string
