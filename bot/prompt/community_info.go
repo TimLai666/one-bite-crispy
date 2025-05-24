@@ -14,4 +14,7 @@ var communityInfoRootMap = map[string]string{
 	}),
 	"舉辦活動的地點": conv.ToString([2]string{"民族公園（地址：新北市永和區民族街33號）", "社區發展協會"}),
 	"活動":      conv.ToString(activitiesInfo),
+	"獎項":      conv.ToString(awardsInfo),
+	"官方網站":    "https://timlai666.github.io/one-bite-crispy/",
+	"粉絲專頁":    "https://www.facebook.com/profile.php?id=100069389774627&locale=zh_TW",
 }

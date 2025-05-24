@@ -16,6 +16,7 @@ WORKDIR /
 # Copy the Precompiled binary file from the previous stage
 COPY --from=builder /app/main .
 # Copy the config file
-COPY --from=builder /app/.env .env
+COPY --from=builder /app/.env .
+COPY --from=builder /app/prompt/base_prompt.md ./prompt/base_prompt.md
 
 CMD [ "./main" ]
