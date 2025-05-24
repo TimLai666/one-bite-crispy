@@ -1,6 +1,6 @@
 package prompt
 
-var awardsInfo = []map[string]any{
+var AwardsInfoMap = []map[string]any{
 	{"獎項名稱": "社區共好貢獻獎", "相關貼文連結": "https://www.facebook.com/share/p/1AZovTF2h6/"},
 	{"獎項名稱": "社區金點獎", "頒獎單位": "衛生福利部",
 		"獎項描述":   "衛福部社區金點獎是由衛生福利部自2015年（民國104年）起舉辦的全國性表揚活動，旨在肯定在社區照顧服務領域中表現卓越的團體與個人。該獎項透過選拔與獎勵機制，鼓勵更多人投入社區照顧服務",

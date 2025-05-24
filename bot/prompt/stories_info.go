@@ -1,6 +1,6 @@
 package prompt
 
-var storiesInfoMap = []map[string]any{
+var StoriesInfoMap = []map[string]any{
 	{"故事內容": "社區內一名爺爺民國95年將房子過戶給大兒子，結果導致其他子女都不跟爺爺往來，大兒子過世後，長孫還將爺爺跟姑姑趕出家門，爺爺只能來民權社區的據點，據點裡的其他夥伴幫爺爺找律師協助", "相關貼文連結": "https://www.facebook.com/share/p/1Bvzb1jhu4/"},
 	{"故事內容": "有志工連續六年會在過年前給民權社區的長輩們送年菜，也會關懷這裡的獨居老人", "相關貼文連結": "https://www.facebook.com/share/p/1UdntPCCpz/"},
 	{"故事內容": "春節前，民權社區往年都會做酸白菜，在當地很有名，為即將來的春節準備酸白菜火鍋", "相關貼文連結": "https://www.facebook.com/share/p/16gwYNPWoD/"},

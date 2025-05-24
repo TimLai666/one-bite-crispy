@@ -8,13 +8,14 @@ require (
 )
 
 require (
-	github.com/dlclark/regexp2 v1.10.0 // indirect
+	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/pkoukk/tiktoken-go v0.1.6 // indirect
+	github.com/pkoukk/tiktoken-go v0.1.7 // indirect
 )
 
 require (
 	github.com/HazelnutParadise/Go-Utils v0.8.1
+	github.com/TimLai666/zaipra v0.1.1
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect

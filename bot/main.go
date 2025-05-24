@@ -14,7 +14,7 @@ import (
 func main() {
 	// res, _ := prompt.ReplyPrompt("hello")
 	// fmt.Println(res)
-	// res, err := service.AskInfo("故事")
+	// res, err := service.AskInfo("社區每年會幹嘛")
 	// fmt.Println(res)
 	// fmt.Println(err)
 	// return

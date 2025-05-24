@@ -5,6 +5,8 @@ import (
 	"log"
 	"text/template"
 	"time"
+
+	"github.com/HazelnutParadise/Go-Utils/conv"
 )
 
 var tmpl *template.Template
@@ -18,15 +20,14 @@ func init() {
 	}
 }
 
-func ReplyPrompt(msg string) (string, error) {
+func ReplySystemPrompt(msg string) (string, error) {
 	var tpl bytes.Buffer
 	now := time.Now()
 	if err := tmpl.Execute(&tpl, struct {
-		Info    map[string]any
-		Msg     string
-		Today   string
-		NowTime string
-	}{Info: communityInfoRootMap, Msg: msg, Today: now.Format("2006/01/02"), NowTime: now.Format("15:04")}); err != nil {
+		CommunityBaseInfo string
+		Today             string
+		NowTime           string
+	}{CommunityBaseInfo: conv.ToString(CommunityBaseInfoMap), Today: now.Format("2006/01/02"), NowTime: now.Format("15:04")}); err != nil {
 		return "", err
 	}
 

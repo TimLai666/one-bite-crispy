@@ -7,7 +7,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-const devMode bool = false
+const devMode bool = true
 
 var (
 	OLLAMA_BASE_URL     string
